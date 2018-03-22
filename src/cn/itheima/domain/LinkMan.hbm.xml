@@ -28,7 +28,7 @@
         <property name="lkm_qq"></property>
         <property name="lkm_position"></property>
         <property name="lkm_memo"></property>
-        <property name="customer"></property>
+
         
         <!--多对一关系  -->
         <!--name属性:引用属性名
