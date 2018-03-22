@@ -33,7 +33,14 @@
 		      <many-to-many class="Role" column="role_id"></many-to-many>中
 		                    class:我与哪个类是多对多关系。column:外键，我引用别人的外键
 		    -->
-        <set name="roles" table="sys_user_role">
+		    <!-- cascade级联操作:
+		 			save-update: 级联保存更新
+		 			delete:级联删除
+		 			all:级联保存更新+级联删除
+		 	结论: cascade简化代码书写.该属性使不使用无所谓. 建议要用只用save-update.
+		 		 如果使用delete操作太过危险.尤其在多对多中.不建议使用.
+		 			 --> 
+        <set name="roles" table="sys_user_role" cascade="save-update">
             <key column="user_id"></key>
             <many-to-many class="Role" column="role_id"></many-to-many>
         </set>
