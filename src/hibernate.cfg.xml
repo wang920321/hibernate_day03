@@ -64,5 +64,7 @@
 		 -->
         <mapping resource="cn/itheima/domain/Customer.hbm.xml"/>
         <mapping resource="cn/itheima/domain/LinkMan.hbm.xml"/>
+        <mapping resource="cn/itheima/domain/User.hbm.xml"/>
+        <mapping resource="cn/itheima/domain/Role.hbm.xml"/>
     </session-factory> 
 </hibernate-configuration> 
