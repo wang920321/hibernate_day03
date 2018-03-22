@@ -29,12 +29,29 @@
         <property name="cust_phone" column="cust_phone"></property>
         <property name="cust_mobile" column="cust_mobile"></property>
         <!--集合，一对多关系，在配置文件中配置  -->
+      
         <!--name属性:集合属性名
             column属性:外键列名
             class属性:与我关联的对象完整类名
+            
           -->
-        <set name="linkMans">
-            <key column="lkm_cust_id"></key>
+            <!--级联操作:cascade
+            save-update:级联保存更新
+            delete:级联删除
+            all:级联保存更新+级联删除
+            级联操作:简化操作
+          -->
+          <!-- inverse属性: 配置关系是否维护. 
+		  		true: customer不维护关系
+		  		false(默认值): customer维护关系
+		  		
+		  	inverse属性: 性能优化.提高关系维护的性能.
+		  	原则: 无论怎么放弃,总有一方必须要维护关系.
+		  	一对多关系中: 一的一方放弃.也只能一的一方放弃.多的一方不能放弃.
+		  -->
+		  
+        <set name="linkMans" inverse="true">
+            <key column="lkm_cust_id" ></key>
             <one-to-many class="LinkMan"/>
         </set>
     </class>

@@ -35,6 +35,7 @@
             column属性:外键列名
             class属性:与我关联的对象完整类名
           -->
+          <!-- 多的一方: 不能放弃维护关系的.外键字段就在多的一方.  -->
         <many-to-one name="customer" column="lkm_cust_id" class="Customer" ></many-to-one>
         
     </class>
